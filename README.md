@@ -255,24 +255,24 @@ III.A) Modèle Logique de Données (MLD)
 
 
 
-Client = (_ID_Client VARCHAR(50), Adresse VARCHAR(50), Téléphone INT, Email VARCHAR(50), Statut_Client VARCHAR(50));
+Client = (_ID_Client VARCHAR(50), Adresse VARCHAR(50), Telephone VARCHAR(20), Email VARCHAR(50), Statut_Client VARCHAR(50));
 
-Agence = (_ID_Agence VARCHAR(50), Nom_Agence VARCHAR(50), Adresse_Agence VARCHAR(50), Ville VARCHAR(50), Code_Postal INT);
+Agence = (_ID_Agence VARCHAR(50), Nom_Agence VARCHAR(50), Adresse_Agence VARCHAR(50), Ville VARCHAR(50), Code_Postal VARCHAR(10));
 
-Véhicule = (_ID_Véhicule VARCHAR(50), Immatriculation VARCHAR(50), Marque VARCHAR(50), Modèle VARCHAR(50), Catégorie VARCHAR(50), Carburant VARCHAR(50), Type_de_Motorisation VARCHAR(50), Kilometrage INT, Statut_Vehicule VARCHAR(50), #_ID_Client*, #_ID_Agence);
+Vehicule = (_ID_Vehicule VARCHAR(50), Immatriculation VARCHAR(50), Marque VARCHAR(50), Modele VARCHAR(50), Categorie VARCHAR(50), Carburant VARCHAR(50), Type_de_Motorisation VARCHAR(50), Kilometrage INT, Statut_Vehicule VARCHAR(50), #_ID_Client, #_ID_Agence);
 
-Employé = (_ID_Employé VARCHAR(50), Nom_Employé VARCHAR(50), Prénom_Employé VARCHAR(50), Rôle VARCHAR(50), #_ID_Agence);
+Employe = (_ID_Employe VARCHAR(50), Nom_Employe VARCHAR(50), Prenom_Employe VARCHAR(50), Role VARCHAR(50), #_ID_Agence);
 
-Assurance = (_ID_Assurance VARCHAR(50), Nom_Assurance VARCHAR(50), Tarif_Journalier INT, Description VARCHAR(50));
+Assurance = (_ID_Assurance VARCHAR(50), Nom_Assurance VARCHAR(50), Tarif_Journalier DECIMAL(15,2), Description VARCHAR(50));
 
-Client_Entreprise = (_ID_Client_Entreprise VARCHAR(50), Raison_Social VARCHAR(50), Siret INT, #_ID_Client);
+Client_Entreprise = (_ID_Client_Entreprise VARCHAR(50), Raison_Sociale VARCHAR(50), Siret VARCHAR(14), #_ID_Client);
 
-Client_Particulier = (_ID_Client_Particulier VARCHAR(50), Nom VARCHAR(50), Prénom VARCHAR(50), Date_Naissance DATE, Numéro_Permis INT, Date_Validité_Permis DATE, #_ID_Client);
+Client_Particulier = (_ID_Client_Particulier VARCHAR(50), Nom VARCHAR(50), Prenom VARCHAR(50), Date_Naissance DATE, Numero_Permis VARCHAR(20), Date_Validite_Permis DATE, #_ID_Client);
 
-Location = (_ID_Location VARCHAR(50), Date_Début DATE, Date_Fin DATE, Statut_Location VARCHAR(50), Prix_Total INT, #_ID_Employé, #_ID_Véhicule, #_ID_Client);
+Location = (_ID_Location VARCHAR(50), Date_Debut DATE, Date_Fin DATE, Statut_Location VARCHAR(50), Prix_Total DECIMAL(15,2), #_ID_Employe, #_ID_Vehicule, #_ID_Client);
 
-Paiement = (_ID_Paiement VARCHAR(50), Date_Paiement DATE, Montant INT, Mode_Paiement VARCHAR(50), Statut_Paiement VARCHAR(50), #_ID_Location);
+Paiement = (_ID_Paiement VARCHAR(50), Date_Paiement DATE, Montant DECIMAL(15,2), Mode_Paiement VARCHAR(50), Statut_Paiement VARCHAR(50), #_ID_Location);
 
-Contrat = (_Num_Contrat VARCHAR(50), Date_Signature DATE, Conditions_Générales VARCHAR(50), #_ID_Location);
+Contrat = (_Num_Contrat VARCHAR(50), Date_Signature DATE, Conditions_Generales VARCHAR(50), #_ID_Location);
 
 Inclure = (#_ID_Location, #_ID_Assurance, Date_Souscription DATE);
