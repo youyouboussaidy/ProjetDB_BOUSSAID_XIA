@@ -249,7 +249,12 @@ Tu as maintenant :
 	•	Implémentation SQL
 
 
+
+	
 -----------------------------------------------------------------------------------------------------------------------
+
+
+
 
 III.A) Modèle Logique de Données (MLD)
 
@@ -276,3 +281,31 @@ Paiement = (_ID_Paiement VARCHAR(50), Date_Paiement DATE, Montant DECIMAL(15,2),
 Contrat = (_Num_Contrat VARCHAR(50), Date_Signature DATE, Conditions_Generales VARCHAR(50), #_ID_Location);
 
 Inclure = (#_ID_Location, #_ID_Assurance, Date_Souscription DATE);
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+Scénario d’utilisation : La base de données est utilisée par le responsable de l'entreprise de location.
+
+Il utilise la base pour :
+- consulter les clients enregistrés,
+- vérifier les véhicules disponibles, loués ou en maintenance,
+- suivre les locations effectuées,
+- contrôler les paiements associés aux locations,
+- connaître les contrats signés,
+- voir les assurances souscrites,
+- obtenir des statistiques sur l’activité de l’entreprise.
+
+Les données qu’il souhaite extraire concernent  :
+- les clients et leurs coordonnées,
+- les véhicules et leur état,
+- les locations par période,
+- les paiements et leurs montants,
+- les assurances associées aux locations,
+- le nombre de locations par véhicule, par agence ou par client,
+- le chiffre d’affaires généré.
