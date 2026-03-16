@@ -265,6 +265,9 @@ II. Modéle Conceptuel De Donnée (MCD)
 
 III.A) Modèle Logique de Données (MLD)
 
+<img width="1460" height="230" alt="image" src="https://github.com/user-attachments/assets/178d44bb-f1b4-4653-a2ca-b9e5e1210a5a" />
+
+
 
 
 Client = (_ID_Client VARCHAR(50), Adresse VARCHAR(50), Telephone VARCHAR(20), Email VARCHAR(50), Statut_Client VARCHAR(50));
